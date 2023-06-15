@@ -1,0 +1,33 @@
+.header__container {
+   padding-top: 4.5rem;
+   .sm-block({
+      padding-top: 4rem;
+   });
+    .xs-block({
+       padding-top: 3rem;
+   })
+}
+.header__container .row {
+   flex-wrap: nowrap;
+   .justify-between();
+   .md-block({
+      .items-start();
+   });
+   .xs-block({
+      flex-wrap: wrap;
+   })
+}
+.header__logo {
+   position: relative;
+   z-index: 200;
+   height: 4rem;
+   flex-basis: 20%;
+   min-width: 14.7rem;
+   .sm-block({
+      min-width: 35vw;
+   });
+    .xs-block({
+       height: 6rem;
+      min-width: 45vw;
+   })
+}

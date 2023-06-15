@@ -1,0 +1,114 @@
+.caption__container {
+   position: relative;
+   z-index: 200;
+}
+h1.caption__main {
+   .oswald-bold();
+   font-size: 6rem;
+   line-height: 6.8rem;
+   color: #ffffff;
+   text-transform: uppercase;
+   
+   margin-top: 6rem;
+   
+   .xl-block({
+      font-size: 5.3rem;
+      line-height: 5.9rem;
+   });
+   .md-block({
+      font-size: 8.5vw;
+      line-height: 9.5vw;
+   });
+    .xs-block({
+      margin-top: 7rem;
+   });
+    .xxs-block({
+      margin-top: 5rem;
+   })
+}
+section.caption__container h2.title {
+   position: relative;
+   z-index: 200;
+   width: 60%;
+   min-width: 280px;
+   margin-top: 3rem;
+   color: rgba(255, 255, 255, 0.9);
+   font-size: 1.8rem;
+   line-height: 2rem;
+   .middle-block({
+      width: 80%;
+      font-size: 2rem;
+      line-height: 2.2rem;
+   });
+   .md-block({
+      width: 90%;
+      margin-top: 2rem;
+      font-size: 3.8vw;
+      line-height: 4.6vw;
+   });
+}
+.caption__container h3 {
+    width: 60%;
+   min-width: 280px;
+   margin-top: 3rem;
+   color: rgba(255, 255, 255, 0.8);
+   .middle-block({
+      width: 80%;
+   });
+   .md-block({
+      width: 90%;
+      margin-top: 2rem;
+   });
+}
+
+section.caption__container h2.title:after {
+   .pseudo();
+   right: -120%;
+   top: -30vw;
+   width: 50vw;
+   height: 50vw;
+   border-radius: 100px;
+   background: radial-gradient(44.56% 44.56% at 50% 50%, #03134E 0%, rgba(3, 19, 78, 0) 100%);;
+}
+.animation__container {
+   position: absolute;
+   z-index: 200;
+   right: -55%;
+   top: -3vw;
+   transform: translateX(50%) translateY(-50%);
+   width: 46rem;
+   height: 46rem;
+   .ll-block({
+      right: -50%;
+      top: 4vw;
+    width: 38vw;
+    height: 38vw
+   });
+   .xl-block({
+      right: -50%;
+      top: 9vw;
+      width: 30rem;
+      height: 30rem;
+   });
+   .middle-block({
+      top: unset;
+      right: 20%;
+      bottom: -200%;
+      transform: translateX(50%) translateY(80%);
+      width: 35rem;
+      height: 35rem;
+   });
+   .md-block({
+      bottom: -112%;
+   });
+   .smmd-block({
+      bottom: -140%;
+      right: 30%
+   });
+   .xs-block({
+      bottom: -152%;
+   });
+   .xxs-block({
+      bottom: -280%;
+   });
+}

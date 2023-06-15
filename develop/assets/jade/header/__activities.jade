@@ -1,0 +1,8 @@
+mixin activities( icon, h1, h2 )
+   article.mb5
+      .activities__point
+         object( type="image/svg+xml", data="./assets/data/animation/corner-#{icon}.svg" )
+            img( src='./assets/data/animation/corner-static.svg' )
+      .activities__text
+         h1.title.mb15 !{h1}
+         .text-25 !{h2}

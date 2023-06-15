@@ -1,0 +1,26 @@
+#container_first {
+   position: relative;
+   z-index: 400;
+   background: @gradient;
+   overflow: hidden;
+}
+#container_first:before {
+   .pseudo();
+   z-index: 100;
+   top: -10vw;
+   left: -50vw;
+   width: 100vw;
+   height: 100vw;
+   border-radius: 100px;
+   background: @radial;
+}
+#container_first:after {
+   .pseudo();
+   z-index: 100;
+   top: -30vw;
+   right: -40vw;
+   width: 100vw;
+   height: 100vw;
+   border-radius: 100px;
+   background: @radial2;
+}
