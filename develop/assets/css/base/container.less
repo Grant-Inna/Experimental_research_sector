@@ -1,22 +1,39 @@
+#container_main {
+   position: relative;
+}
+/*.line__main {
+   position: absolute;
+   z-index: 200;
+   top: 20vw;
+   
+   width: 150vw;
+   height: 30vw;
+   
+   transform: translateX(-50%);
+   .lines-top();
+}*/
+
 #container_first {
    position: relative;
-   z-index: 400;
+   z-index: 100;
    background: @gradient;
    overflow: hidden;
+   padding-bottom: 4rem;
+   .bg-lines-top()
 }
-#container_first:before {
+/*#container_first:before {
    .pseudo();
-   z-index: 100;
+   z-index: 200;
    top: -10vw;
    left: -50vw;
    width: 100vw;
    height: 100vw;
    border-radius: 100px;
    background: @radial;
-}
+}*/
 #container_first:after {
    .pseudo();
-   z-index: 100;
+   z-index: 200;
    top: -30vw;
    right: -40vw;
    width: 100vw;
