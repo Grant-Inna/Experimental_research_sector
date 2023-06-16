@@ -39,6 +39,7 @@
 @fields: 60px;
 @fields_lg: 40px;
 @fields_sm: 30px;
+@fields_xs: 15px;
 
 .wrapper-full(){
     padding-left: @fields;
@@ -52,6 +53,10 @@
     .sm-block({
         padding-left: @fields_sm;
         padding-right: @fields_sm;
+    });
+    .xs-block({
+        padding-left: @fields_xs;
+        padding-right: @fields_xs;
     });
 }
 

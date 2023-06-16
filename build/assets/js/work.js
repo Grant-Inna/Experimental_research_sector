@@ -1,1 +1,208 @@
-$(document).ready(function(){if(0<$(".element__more").length){let e=$(".element__more"),s=$(".hidden"),o=$(".element__more_arrow"),n=$(".element__more span"),i=$(".element__link span");e.on("click",function(){let e=$(this).closest(".footer__section");e.hasClass("open")?(e.find(s).slideUp(400),e.find(i).fadeOut(),e.removeClass("open"),$(this).find(n).html("Подробнее"),o.removeClass("rotate")):($(".open").removeClass("open"),s.slideUp(400),i.fadeOut(),$(".footer__section").removeClass("open"),n.html("Подробнее"),e.find(s).slideDown(400),e.find(o).addClass("rotate"),e.find(i).fadeIn(),e.addClass("open"),$(this).find(n).html("Скрыть"))})}0<$("#totop").length&&$("#totop").on("click",function(){$("body, html").animate({scrollTop:0},600)});var e,s,o,n,i,t,l,a,d=$(document).width();function c(){i.show(),o.css("width",e),s.addClass("show_aside"),o.show().animate(t,7,function(){s.fadeOut()}),n.addClass("show_aside"),n.on("click",r),i.on("click",r),s.off("click",c)}function r(){i.hide(),s.removeClass("show_aside").show(),n.removeClass("show_aside"),o.css("width","0"),o.hide().prop("style",""),n.off("click",r),i.off("click",r),s.on("click",c)}if(0<$(".menu__mobile").length&&(e=d<380||d<450?.7*d:.6*d,s=$(".wrapper .menu__mobile"),o=$(".menu__mobile_container"),$(".menu__mobile_icon"),n=$(".menu__mobile_container .menu__mobile"),i=$("#black_back"),s.on("click",c),t={right:0,opacity:"1"}),0<$("#events_calendar__slider").length&&($(".slider__calendar").slick({slidesToShow:1,slidesToScroll:1,speed:400,arrows:!1,fade:!0,asNavFor:".slider__month"}),$(".slider__month").slick({slidesToShow:8,slidesToScroll:1,asNavFor:".slider__calendar",speed:400,centerPadding:"60px",variableWidth:!0,dots:!1,arrows:!0,centerMode:!0,focusOnSelect:!0,cssEase:"easy-in-out",responsive:[{breakpoint:1400,settings:{centerPadding:"50px",slidesToShow:8}},{breakpoint:1270,settings:{centerPadding:"50px",slidesToShow:7}},{breakpoint:950,settings:{centerPadding:"50px",slidesToShow:5}},{breakpoint:770,settings:{centerPadding:"40px",slidesToShow:4}},{breakpoint:600,settings:{centerPadding:"40px",slidesToShow:3}},{breakpoint:450,settings:{centerPadding:"30px",slidesToShow:2}},{breakpoint:370,settings:{centerPadding:"20px",slidesToShow:1}}]})),0!=document.location.hash.length){let e=$(document.location.hash),s=e.prop("id").split("_")[1],o=s.split("-")[0],n=s.split("-")[1],i=s.split("-")[2];l=e,a=o+" / "+n+" / "+i,s,$(".news_one__article").not(l).removeClass("active_news").hide(),l.addClass("active_news").show(),$(".news_one__date").text(a),$("body, html").scrollTop(0)}$(".materials__pagination_container").length});
+$(document).ready(function () {
+   /* читать о продукте */
+   
+   if ($('.product__holder').length > 0) {
+      
+      let $element__more = $('.trigger'),
+          $hide = $('.hidden'),
+          $arrow = $('.trigger__icon');
+      
+      $element__more.on('click', openAnswer);
+      
+      function openAnswer() {
+         let parent = $(this).closest('.product__holder');
+         
+         if (!parent.hasClass('open')) {
+            
+            parent.find($hide).slideDown(400); // ради чего всё затевалось - показать скрытое
+            $('.product__holder').removeClass('open');
+            parent.find($arrow).addClass('rotate-sm');
+            
+            parent.addClass('open');
+            
+         } else {
+            parent.find($hide).slideUp(400);
+            parent.removeClass('open');
+            parent.find($arrow).removeClass('rotate-sm');
+         }
+      }
+      
+   }
+   
+   /* плавный скрол */
+   
+   if ($('#totop').length > 0) {
+    
+      $('#totop').on( 'click', function() {
+         $('body, html').animate({scrollTop: 0 }, 600); // плавно переходим наверх
+      });
+      
+   }
+   
+   /* боковое меню */
+   const width = $(document).width();
+   
+   if ($('.menu__mobile').length > 0) {
+      
+      var menu_width;
+      
+      if (width < 380) {
+         menu_width = width * 0.7
+      } // Ширина меню зависит от размера экрана
+      else if (width < 450) {
+         menu_width = width * 0.7
+      } else {
+         menu_width = width * 0.6
+      }
+      
+      var $mobile_trigger = $('.wrapper .menu__mobile'),
+         $mobile_menu = $('.menu__mobile_container'),
+         $mobile_icon = $('.menu__mobile_icon'),
+         $mobile_cross = $('.menu__mobile_container .menu__mobile'),
+         $blackLayer = $('#black_back');
+   
+      $mobile_trigger.on('click', showAsideMenu);
+      
+      var menu_show_style = {
+         right: 0,
+         opacity: '1'
+      };
+      
+   }
+   function showAsideMenu() {
+      $blackLayer.show();
+      $mobile_menu.css( 'width', menu_width);
+   
+      $mobile_trigger.addClass('show_aside');
+      
+      $mobile_menu.show().animate(menu_show_style, 7, function() {
+         $mobile_trigger.fadeOut();
+      });
+      $mobile_cross.addClass('show_aside');
+      $mobile_cross.on( 'click', hideAsideMenu);
+      $blackLayer.on( 'click', hideAsideMenu);
+      
+      $mobile_trigger.off('click', showAsideMenu);
+   }
+   function hideAsideMenu() {
+      $blackLayer.hide();
+      $mobile_trigger.removeClass('show_aside').show();
+      $mobile_cross.removeClass('show_aside');
+      
+      $mobile_menu.css( 'width', '0');
+      $mobile_menu.hide().prop( 'style', '');
+      
+      $mobile_cross.off( 'click', hideAsideMenu);
+      $blackLayer.off( 'click', hideAsideMenu);
+      $mobile_trigger.on('click', showAsideMenu);
+   }
+   /* слайдер */
+   
+   if ($('#events_calendar__slider').length > 0 ) {
+      $('.slider__calendar').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 400,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider__month'
+         });
+      $('.slider__month').slick({
+         slidesToShow: 8,
+         slidesToScroll: 1,
+         asNavFor: '.slider__calendar',
+         speed: 400,
+         centerPadding: '60px',
+         variableWidth: true,
+         dots: false,
+         arrows: true,
+         centerMode: true,
+         focusOnSelect: true,
+         cssEase: 'easy-in-out',
+         responsive: [
+            {
+               breakpoint: 1400,
+               settings: {
+                  centerPadding: '50px',
+                  slidesToShow: 8
+               }
+            },
+            {
+               breakpoint: 1270,
+               settings: {
+                  centerPadding: '50px',
+                  slidesToShow: 7
+               }
+            },
+            {
+               breakpoint: 950,
+               settings: {
+                  centerPadding: '50px',
+                  slidesToShow: 5
+               }
+            },
+            {
+               breakpoint: 770,
+               settings: {
+                  centerPadding: '40px',
+                  slidesToShow: 4
+               }
+            },
+            {
+               breakpoint: 600,
+               settings: {
+                  centerPadding: '40px',
+                  slidesToShow: 3
+               }
+            },
+            {
+               breakpoint: 450,
+               settings: {
+                  centerPadding: '30px',
+                  slidesToShow: 2
+               }
+            },
+            {
+               breakpoint: 370,
+               settings: {
+                  centerPadding: '20px',
+                  slidesToShow: 1
+               }
+            }
+         ]
+      
+      });
+   }
+   
+   
+   /* новости */
+   let image;
+   
+   if( document.location.hash.length != 0 ) {
+      let $news = $(document.location.hash);
+      let current_issue = $news.prop('id').split('_')[1],
+          day = current_issue.split('-')[0],
+          month = current_issue.split('-')[1],
+          year = current_issue.split('-')[2];
+          
+      let date = day + ' / ' + month + ' / ' + year;
+      
+      showHashNews($news, date, current_issue);
+   }
+   function showHashNews( current, date, current_issue ) {
+      $('.news_one__article').not(current).removeClass('active_news').hide();
+      current.addClass('active_news').show();
+      $('.news_one__date').text(date);
+      
+      $('body, html').scrollTop(0);
+   }
+   
+   
+   /*  пагинация  */
+   if($('.materials__pagination_container'). length > 0){
+   
+   
+   }
+
+
+});

@@ -9,6 +9,9 @@
 @weight1: 'Regular';
 @w-num1: 400;
 
+@weight4: 'Medium';
+@w-num4: 500;
+
 @weight2: 'SemiBold';
 @w-num2: 600;
 
@@ -35,6 +38,13 @@
     src: local('@{family} @{weight3}'), local('@{family}-@{weight3}'),
         url('@{font-path}-@{weight3}.ttf') format('truetype');
     font-weight: @w-num3;
+    font-style: normal;
+}
+@font-face {
+  font-family: @family;
+    src: local('@{family} @{weight4}'), local('@{family}-@{weight4}'),
+        url('@{font-path}-@{weight4}.ttf') format('truetype');
+    font-weight: @w-num4;
     font-style: normal;
 }
 
@@ -87,6 +97,11 @@
 .oswald-regular() {
    font-family: 'Oswald', Verdana, sans-serif;
    font-weight: 400;
+   font-style: normal;
+}
+.oswald-medium() {
+   font-family: 'Oswald', Verdana, sans-serif;
+   font-weight: 500;
    font-style: normal;
 }
 .oswald-bold() {

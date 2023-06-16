@@ -31,3 +31,45 @@
    border-radius: 100px;
    background: @radial2;
 }
+
+
+#container_second {
+   position: relative;
+   z-index: 100;
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+}
+#container_second:before {
+   .pseudo();
+   z-index: 100;
+   width: 30%;
+   height: 35vw;
+   top: -8vw;
+   right: 0;
+   
+   .bg-lines-side();
+   
+   .ll-block({
+      top: -12vw;
+      width: 50%;
+      height: 70vw;
+   });
+   .xxl-block({
+      top: -12vw;
+      width: 50%;
+      height: 50vw;
+   });
+   .lg-block({
+      top: -12vw;
+      width: 80%;
+      height: 110%;
+   });
+   .md-block({
+      top: -12vw;
+      width: 80%;
+   });
+   .sm-block({
+      top: -17vw;
+      width: 100%;
+   });
+}

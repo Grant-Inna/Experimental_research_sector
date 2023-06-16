@@ -53,7 +53,7 @@ let gridOptions = {
       md: {
          width: "770px"
       },
-      mdx: {
+      smmd: {
          width: "660px"
       },
       sm: {
@@ -62,7 +62,8 @@ let gridOptions = {
          offset: "10px"
       },
       xs: {
-         width: "470px"
+         width: "470px",
+         fields: "15px"
       },
       xxs: {
          width: "370px"

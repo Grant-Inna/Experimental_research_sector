@@ -1,0 +1,161 @@
+.product__container {
+   position: relative;
+   z-index: 300;
+   .flex();
+   .xs-block({
+      display: block;
+   })
+}
+.product__accordion {
+   position: relative;
+   z-index: 300;
+}
+.trigger {
+   cursor: pointer;
+}
+.trigger h2.caption {
+   width: calc( 100% - 5rem );
+}
+.trigger__icon_holder {
+    width: 4rem;
+   height: 4rem;
+   
+}
+.trigger__icon {
+   position: absolute;
+   z-index: 500;
+    width: 4rem;
+   height: 4rem;
+   
+   right: 4rem;
+   top: 3rem;
+   bottom: unset;
+   
+   .tr();
+   .smmd-block({
+      top: 2.5rem;
+     right: 2rem;
+   });
+    .xs-block({
+       top: 2rem;
+       right: 1.5rem;
+   });
+}
+.trigger__icon.rotate-sm {
+   top: unset;
+   bottom: 1.8rem;
+}
+
+.product__holder {
+   position: relative;
+   z-index: 500;
+   padding: 3rem 6rem;
+   border-radius: 2px;
+   background-color: #ffffff;
+   box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+   .smmd-block({
+     padding: 2.5rem 4rem;
+   });
+    .xs-block({
+       padding: 2rem 3rem;
+   });
+}
+.product__holder p {
+   width: calc( 95% - 3rem );
+    .md-block({
+       width: calc( 95% - 1rem );
+   });
+}
+.product__holder.mb2 p {
+   width: 42%;
+   
+   .middle-block({
+      width: calc( 95% - 2rem );
+   });
+   .smmd-block({
+      width: calc( 100% - 2rem );
+   })
+}
+
+.product__hidden {
+   position: relative;
+   z-index: 200;
+   
+   height: 13rem;
+   .ll-block({
+      height: 10rem;
+   });
+   .xl-block({
+      height: 9rem;
+   });
+   .middle-block({
+      height: 20rem;
+   });
+   .lg-block({
+      height: 20rem;
+   });
+   .smmd-block({
+      height: 23rem;
+   });
+   .xs-block({
+     height: 30rem;
+   });
+}
+.product__hidden:after {
+   .pseudo();
+   z-index: 300;
+   width: 45%;
+   height: 23rem;
+   
+   top:-4rem;
+   right: 6rem;
+   .fictosha();
+   
+   .xxl-block({
+      height: 13rem;
+      top: -2rem;
+      right: 4.5rem;
+      .fictosha-adapt();
+   });
+   .xl-block({
+      top: unset;
+      bottom: -1rem;
+      right: 5rem;
+      
+   });
+   .middle-block({
+      width: 65%;
+      height: 17rem;
+       top: unset;
+       bottom: -2rem;
+       right: 8rem;
+   });
+   .lg-block({
+      width: 80%;
+      height: 16rem;
+      top: unset;
+      bottom: -1rem;
+      right: 6rem;
+      .fictosha-adapt-sm();
+   });
+   .smmd-block({
+      width: 80%;
+      height: 18rem;
+      top: unset;
+      bottom: -1rem;
+      right: 6rem;
+      .fictosha-adapt();
+   });
+   .xs-block({
+      width: 90%;
+      height: 22rem;
+      top: unset;
+      bottom: -1rem;
+      right: 4rem;
+      .fictosha-adapt-xs();
+   });
+   
+}
+.product__face {
+   max-width: 100%;
+}
