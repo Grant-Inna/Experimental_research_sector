@@ -1,6 +1,5 @@
 @family: 'Oswald';
 @family2: 'Roboto';
-@family3: 'Montserrat';
 
 
 @weight0: 'Light';
@@ -24,7 +23,6 @@
 
 @font-path: '../fonts/@{family}/@{family}';
 @font-path2: '../fonts/@{family2}/@{family2}';
-@font-path3: '../fonts/@{family3}/@{family3}';
 
 @font-face {
   font-family: @family;
@@ -78,15 +76,6 @@
     font-style: normal;
 }
 
-@font-face {
-  font-family: @family3;
-    src: local('@{family3} @{weight1}'), local('@{family3}-@{weight1}'),
-        url('@{font-path3}-@{weight1}.ttf') format('truetype');
-    font-weight: @w-num1;
-    font-style: normal;
-}
-
-
 
 
 .oswald-light() {
@@ -129,11 +118,5 @@
 .roboto-bold() {
    font-family: 'Roboto', Arial, sans-serif;
    font-weight: 700;
-   font-style: normal;
-}
-
-.montserrat-regular() {
-   font-family: 'Montserrat', Proxima Nova, Gilroy, Arial, Helvetica, sans-serif;
-   font-weight: 400;
    font-style: normal;
 }

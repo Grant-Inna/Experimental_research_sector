@@ -29,10 +29,6 @@
    min-width: 100%;
    flex-basis: 40%;
    flex-grow: 1;
-   .middle-block({
-      //height: 10%;
-      flex-grow: 1;
-   });
 }
 
 .activities__container .rotate__text  {
@@ -51,22 +47,62 @@
 
 .product__container .rotate__text  {
    width: 3rem;
-   min-height: 5rem;
-    flex-basis: 30%;
+   min-height: 17rem;
+    flex-basis: 22%;
    .text-product();
    .xxl-block({
       min-width: 2.6rem;
+      min-height: 21rem;
+      flex-basis: 30%;
+   });
+   .md-block({
+      min-height: 20rem;
    });
    .md-block({
       width: 4rem;
       min-height: 28rem;
-   })
+   });
 }
 .product__container .rotate__icon  {
    background-color: @color-black;
    flex-grow: 15;
 }
 .product__container h1.caption {
+   position: relative;
+   z-index: 400;
+   display: none;
+   .xs-block({
+      display: block;
+      padding-top: 2rem;
+      margin-bottom: 4rem;
+   });
+}
+
+
+.additional__container .rotate__holder {
+   min-width: 6rem;
+   margin-right: calc( 5vw - 1rem );
+   .lg-block({
+      min-width: 7rem;
+   });
+   .middle-block({
+      min-width: 5rem;
+      margin-right: 2rem;
+   });
+   .smmd-block({
+      min-width: 6rem;
+      margin-right: 1rem;
+   });
+}
+.additional__container .rotate__text {
+   .text-additional()
+}
+.additional__container .rotate__icon  {
+   background-color: white;
+   flex-grow: 15;
+}
+
+.additional__container h1.caption {
    position: relative;
    z-index: 400;
    display: none;
