@@ -39,169 +39,20 @@ $(document).ready(function () {
       
    }
    
-   /* боковое меню */
-   const width = $(document).width();
    
-   if ($('.menu__mobile').length > 0) {
-      
-      var menu_width;
-      
-      if (width < 380) {
-         menu_width = width * 0.7
-      } // Ширина меню зависит от размера экрана
-      else if (width < 450) {
-         menu_width = width * 0.7
-      } else {
-         menu_width = width * 0.6
-      }
-      
-      var $mobile_trigger = $('.wrapper .menu__mobile'),
-         $mobile_menu = $('.menu__mobile_container'),
-         $mobile_icon = $('.menu__mobile_icon'),
-         $mobile_cross = $('.menu__mobile_container .menu__mobile'),
-         $blackLayer = $('#black_back');
    
-      $mobile_trigger.on('click', showAsideMenu);
-      
-      var menu_show_style = {
-         right: 0,
-         opacity: '1'
-      };
-      
+   function onEntry(entry) {
+     entry.forEach(change => {
+       if (change.isIntersecting) {
+         change.target.classList.add('element-show');
+       }
+     });
    }
-   function showAsideMenu() {
-      $blackLayer.show();
-      $mobile_menu.css( 'width', menu_width);
-   
-      $mobile_trigger.addClass('show_aside');
-      
-      $mobile_menu.show().animate(menu_show_style, 7, function() {
-         $mobile_trigger.fadeOut();
-      });
-      $mobile_cross.addClass('show_aside');
-      $mobile_cross.on( 'click', hideAsideMenu);
-      $blackLayer.on( 'click', hideAsideMenu);
-      
-      $mobile_trigger.off('click', showAsideMenu);
-   }
-   function hideAsideMenu() {
-      $blackLayer.hide();
-      $mobile_trigger.removeClass('show_aside').show();
-      $mobile_cross.removeClass('show_aside');
-      
-      $mobile_menu.css( 'width', '0');
-      $mobile_menu.hide().prop( 'style', '');
-      
-      $mobile_cross.off( 'click', hideAsideMenu);
-      $blackLayer.off( 'click', hideAsideMenu);
-      $mobile_trigger.on('click', showAsideMenu);
-   }
-   /* слайдер */
-   
-   if ($('#events_calendar__slider').length > 0 ) {
-      $('.slider__calendar').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 400,
-            arrows: false,
-            fade: true,
-            asNavFor: '.slider__month'
-         });
-      $('.slider__month').slick({
-         slidesToShow: 8,
-         slidesToScroll: 1,
-         asNavFor: '.slider__calendar',
-         speed: 400,
-         centerPadding: '60px',
-         variableWidth: true,
-         dots: false,
-         arrows: true,
-         centerMode: true,
-         focusOnSelect: true,
-         cssEase: 'easy-in-out',
-         responsive: [
-            {
-               breakpoint: 1400,
-               settings: {
-                  centerPadding: '50px',
-                  slidesToShow: 8
-               }
-            },
-            {
-               breakpoint: 1270,
-               settings: {
-                  centerPadding: '50px',
-                  slidesToShow: 7
-               }
-            },
-            {
-               breakpoint: 950,
-               settings: {
-                  centerPadding: '50px',
-                  slidesToShow: 5
-               }
-            },
-            {
-               breakpoint: 770,
-               settings: {
-                  centerPadding: '40px',
-                  slidesToShow: 4
-               }
-            },
-            {
-               breakpoint: 600,
-               settings: {
-                  centerPadding: '40px',
-                  slidesToShow: 3
-               }
-            },
-            {
-               breakpoint: 450,
-               settings: {
-                  centerPadding: '30px',
-                  slidesToShow: 2
-               }
-            },
-            {
-               breakpoint: 370,
-               settings: {
-                  centerPadding: '20px',
-                  slidesToShow: 1
-               }
-            }
-         ]
-      
-      });
-   }
-   
-   
-   /* новости */
-   let image;
-   
-   if( document.location.hash.length != 0 ) {
-      let $news = $(document.location.hash);
-      let current_issue = $news.prop('id').split('_')[1],
-          day = current_issue.split('-')[0],
-          month = current_issue.split('-')[1],
-          year = current_issue.split('-')[2];
-          
-      let date = day + ' / ' + month + ' / ' + year;
-      
-      showHashNews($news, date, current_issue);
-   }
-   function showHashNews( current, date, current_issue ) {
-      $('.news_one__article').not(current).removeClass('active_news').hide();
-      current.addClass('active_news').show();
-      $('.news_one__date').text(date);
-      
-      $('body, html').scrollTop(0);
-   }
-   
-   
-   /*  пагинация  */
-   if($('.materials__pagination_container'). length > 0){
-   
-   
+   let options = { threshold: [0.5] };
+   let observer = new IntersectionObserver(onEntry, options);
+   let elements = document.querySelectorAll('.element-animation');
+   for (let elm of elements) {
+     observer.observe(elm);
    }
 
 
