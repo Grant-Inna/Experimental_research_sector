@@ -62,6 +62,7 @@
    });
    .lg-block({
       width: 100%;
+      margin-top: 2.5rem;
    });
 }
 .additional__text .small {
@@ -89,37 +90,32 @@
 
 
 .element-animation p {
-  /* Скроем элемент в начальном состоянии */
   opacity: 0;
   transform: translateX(60px);
 }
-.element-animation p {
-  transition: all .4s ease-in-out;
-  transform: translateX(60px);
-}
 .element-animation p:nth-of-type(2) {
-  transition: all .5s ease-in-out;
+   opacity: 0;
   transform: translateX(65px);
 }
 .element-animation p.small {
-  transition: all .6s ease-in-out;
+   opacity: 0;
   transform: translateX(70px);
 }
 
 .element-animation.element-show p {
   opacity: 1;
   transition: all .4s ease-in-out;
-  transform: translateX(0);
+  transform: translateX(0) translateY(0);
 }
 .element-animation.element-show p:nth-of-type(2) {
   opacity: 1;
   transition: all .5s ease-in-out;
-  transform: translateX(0);
+  transform: translateX(0) translateY(0);
 }
 .element-animation.element-show p.small {
   opacity: 1;
   transition: all .6s ease-in-out;
-  transform: translateX(0);
+  transform: translateX(0) translateY(0);
 }
 
 .element-animation a {
@@ -142,4 +138,24 @@
    opacity: 1;
   transition: all .8s ease-in-out;
   transform: translateY(0);
+}
+
+@media screen and (max-width: @break_lg) {
+   .element-animation p {
+      opacity: 0;
+      transform: translateX(0) translateY(10px);
+   }
+   .element-animation p:nth-of-type(2) {
+      opacity: 0;
+      transform: translateX(0) translateY(25px);
+   }
+   .element-animation p.small {
+      opacity: 0;
+      transform: translateX(0) translateY(50px);
+   }
+   
+   .element-animation a {
+      opacity: 0;
+      transform: translateX(25px);
+   }
 }
