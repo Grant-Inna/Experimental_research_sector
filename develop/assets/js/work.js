@@ -5,6 +5,7 @@ $(document).ready(function () {
       
       let $element__more = $('.trigger'),
           $hide = $('.hidden'),
+          $block = $('.product__block'),
           $arrow = $('.trigger__icon');
       
       $element__more.on('click', openAnswer);
@@ -14,14 +15,14 @@ $(document).ready(function () {
          
          if (!parent.hasClass('open')) {
             
-            parent.find($hide).slideDown(400); // ради чего всё затевалось - показать скрытое
+            parent.find($block).slideDown(400); // ради чего всё затевалось - показать скрытое
             $('.product__holder').removeClass('open');
             parent.find($arrow).addClass('rotate-sm');
             
             parent.addClass('open');
             
          } else {
-            parent.find($hide).slideUp(400);
+            parent.find($block).slideUp(400);
             parent.removeClass('open');
             parent.find($arrow).removeClass('rotate-sm');
          }

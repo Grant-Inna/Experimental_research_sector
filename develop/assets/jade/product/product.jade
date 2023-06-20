@@ -5,21 +5,21 @@ section( aria-label='Какие продукты уже готовы в рамк
          .rotate__icon
       h1.caption Продукты сектора
       .product__accordion
-         .product__holder.mb2
+         .product__holder.mb2.open
             .trigger.justify-between
                h2.caption Telegram&ndash;бот &laquo;Фицтоша&raquo;
                .trigger__icon_holder
-                  .trigger__icon.icon-more
-            .hidden.product__hidden
+                  .trigger__icon.icon-more.rotate-sm
+            .product__hidden.product__block
                p.mt Чат-бот, использующий общедоступные API нейросетевых сервисов, с&nbsp;элементами голосового помощника, выполняющий функции секретаря. Существует в&nbsp;бета-версии.
                a( href='https://t.me/FictoshaGPTBot' target='_blank' ).fictosha
 
-         .product__holder
+         .product__holder.open
             .trigger.justify-between
                h2.caption Система подбора ребёнка для&nbsp;усыновления по&nbsp;фотографии одного из&nbsp;(или&nbsp;обоих) потенциальных усыновителей
                .trigger__icon_holder
-                  .trigger__icon.icon-more
-            .hidden
+                  .trigger__icon.icon-more.rotate-sm
+            .product__block
                p.mt2 Система основана на&nbsp;глубокой свёрточной нейронной сети для&nbsp;точного анализа изображений лиц детей и&nbsp;их потенциальных будущих родителей.
                p.mt1 С&nbsp;помощью модели учитываются многие факторы, определяющие степень схожести двух людей&nbsp;&mdash; форма и&nbsp;цвет глаз, форма бровей, форма носа, форма рта и&nbsp;другие.
                .product__face.mt2
